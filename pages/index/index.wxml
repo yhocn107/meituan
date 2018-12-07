@@ -1,0 +1,45 @@
+<view >
+<view class="fenlei" hidden="{{mask1Hidden}}">
+<view class="fenxiang">综合排序</view>
+<view class="fenxiang">销量最高</view>
+<view class="fenxiang">距离最近</view>
+<view class="fenxiang">筛选</view>
+</view>
+      <view class="sort"hidden="{{mask1Hidden}}"bindtap="mask1Cancel" >
+    <block wx:for="{{sortList}}" wx:key="">
+    <view class="overall-sort" data-index="{{index}}" >{{item.sort}}</view>
+    </block> 
+      </view>
+</view>
+<view class="heard">
+<navigator url="/pages/location/location">
+<view class="heard-location">
+<image src="/pages/images/location.png" 
+class="heard-location-icon"/>
+</view>
+</navigator>
+<view class="heard-search">
+<image src="/pages/images/search.png" class="heard-search-icon"/>
+ 鸡排
+</view>
+</view>
+<swiper class="categoryList" indicator-dots="true" indicator-color='#9370DB'indicator-active-color='#40E0D0'>
+<block wx:for="{{categoryList}}" wx:key="">
+<swiper-item>
+<block wx:for="{{item}}" wx:key="">
+<view class="category-info">
+<image src="{{item.src}}"
+class="category-image"></image>
+<view class="category-text">{{item.name}}</view>
+</view>
+</block>
+</swiper-item>
+</block>
+</swiper>
+<view class="header-title">附近商家</view>
+<view class="fenlei">
+<view class="fenxiang" bindtap="zonghepaixu">综合排序</view>
+<view class="fenxiang">销量最高</view>
+<view class="fenxiang">距离最近</view>
+<view class="fenxiang" bindtap="shaixuan">筛选</view>
+</view>
